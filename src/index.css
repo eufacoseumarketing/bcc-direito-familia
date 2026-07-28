@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 20% 98%;
+    --foreground: 25 10% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 25 10% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 25 10% 15%;
+
+    --primary: 0 45% 40%;
+    --primary-foreground: 40 20% 98%;
+
+    --secondary: 30 15% 88%;
+    --secondary-foreground: 25 10% 15%;
+
+    --muted: 30 10% 94%;
+    --muted-foreground: 25 8% 45%;
+
+    --accent: 38 60% 55%;
+    --accent-foreground: 25 10% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 30 15% 88%;
+    --input: 30 15% 88%;
+    --ring: 0 45% 40%;
+
+    --radius: 0.5rem;
+
+    --taupe: 25 12% 60%;
+    --taupe-light: 30 10% 94%;
+    --terracotta: 0 45% 40%;
+    --terracotta-light: 0 35% 95%;
+    --wine: 345 50% 30%;
+    --gold: 38 60% 55%;
+    --gold-light: 38 50% 90%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
