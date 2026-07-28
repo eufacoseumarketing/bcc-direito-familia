@@ -1,25 +1,22 @@
-import bannerImg from "@/assets/banner2.png";
-import mobileImg from "@/assets/mobile.png";
+import bannerImg from "@/assets/banner2.webp";
+import mobileImg from "@/assets/mobile.webp";
 
 const HeroSection = () => {
   return (
     <section id="inicio" className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background images */}
-      <div className="absolute inset-0">
-        {/* Imagem Desktop */}
-        <img
-          src={bannerImg}
-          alt="Dra. Mirlla Reis - BCC Advocacia"
-          className="hidden md:block w-full h-full object-cover object-right"
-        />
-        
-        {/* Imagem Mobile */}
+      {/* Background image — <picture> em vez de duas <img> com hidden/block:
+          o navegador baixa APENAS a variante que corresponde ao breakpoint.
+          Com duas <img>, mesmo a escondida por display:none era baixada. */}
+      <picture className="absolute inset-0 block">
+        <source media="(min-width: 768px)" srcSet={bannerImg} />
         <img
           src={mobileImg}
           alt="Dra. Mirlla Reis - BCC Advocacia"
-          className="block md:hidden w-full h-full object-cover object-top" 
+          className="w-full h-full object-cover object-top md:object-right"
+          fetchPriority="high"
+          decoding="async"
         />
-      </div>
+      </picture>
 
       <div className="relative z-10 container mx-auto px-6 pt-32 pb-20 lg:pt-40">
         {/* Flexbox ativado: centraliza no mobile (items-center text-center) e alinha à esquerda no desktop (md:items-start md:text-left) */}

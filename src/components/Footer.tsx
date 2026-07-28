@@ -1,6 +1,6 @@
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo.webp";
 import whatsappIcon from "@/assets/whatsapp-icon.webp";
-import equipeCta from "@/assets/equipe-cta.jpg";
+import equipeCta from "@/assets/equipe-cta.webp";
 import { MapPin, Phone, Instagram } from "lucide-react";
 import { Link } from "react-router-dom"; // <-- IMPORTAÇÃO ADICIONADA AQUI
 
@@ -17,6 +17,8 @@ const Footer = () => {
           <img
             src={equipeCta}
             alt="Equipe BCC Advocacia"
+            loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover blur-[8px] scale-110 transition-transform duration-1000"
           />
           
@@ -60,7 +62,7 @@ const Footer = () => {
             {/* Logo + Créditos */}
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <img src={logo} alt="BCC Advocacia" className="h-10 w-10 rounded-full" />
+                <img src={logo} alt="BCC Advocacia" loading="lazy" decoding="async" width={40} height={40} className="h-10 w-10 rounded-full" />
                 <span className="font-serif text-lg font-semibold text-background">
                   BCC Advocacia
                 </span>
@@ -109,7 +111,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 hover:text-background transition-colors"
                 >
-                  <img src={whatsappIcon} alt="WhatsApp" className="w-4 h-4" />
+                  <img src={whatsappIcon} alt="WhatsApp" loading="lazy" decoding="async" width={16} height={16} className="w-4 h-4" />
                   WhatsApp
                 </a>
                 <a href="tel:+5561998313480" className="flex items-center gap-2 hover:text-background transition-colors">

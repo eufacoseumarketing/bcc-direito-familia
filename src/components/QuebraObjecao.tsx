@@ -1,5 +1,5 @@
 import { Heart, Eye, Gem, Globe } from "lucide-react";
-import escritorioBg from "@/assets/escritorio-bg.jpeg";
+import escritorioBg from "@/assets/escritorio-bg.webp";
 
 const reasons = [
   { icon: Heart, title: "Atendimento Humano", text: "Você não será tratado como mais um número. Cada caso recebe atenção personalizada e dedicada." },

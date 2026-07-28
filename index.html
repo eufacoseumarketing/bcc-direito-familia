@@ -9,24 +9,61 @@
 
     <link rel="icon" href="/favicon.png" type="image/png" />
 
+    <!-- URLs absolutas: o Vite não reescreve o content de <meta>, então caminhos
+         relativos resolviam para a raiz do domínio (fora de /ddf) e davam 404. -->
     <meta property="og:title" content="BCC Advocacia | Direito de Família" />
     <meta property="og:description" content="Divórcio, guarda e inventário resolvidos com precisão, sigilo e sem surpresas." />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="/favicon.png" />
+    <meta property="og:url" content="https://lp.bccadvocacia.com.br/ddf/" />
+    <meta property="og:image" content="https://lp.bccadvocacia.com.br/ddf/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="675" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="/favicon.png" />
+    <meta name="twitter:image" content="https://lp.bccadvocacia.com.br/ddf/og-image.jpg" />
 
+    <!-- Fontes carregadas sem bloquear o render. As itálicas do Playfair foram
+         removidas: o único texto em itálico da página é Inter (sintetizada). -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-    
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-PLDWFDTZ');</script>
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" />
+    </noscript>
+
+    <!-- Google Tag Manager — carregamento ADIADO (1ª interação ou fallback 3,5s).
+         Não baixa nada até o usuário interagir, preservando o render inicial/LCP.
+         Listeners passivos + touchstart/pointerdown = seguro no WebKit do iOS.
+         Sem requestIdleCallback (não suportado em iOS antigo). -->
+    <script>
+      (function (w, d) {
+        w.dataLayer = w.dataLayer || [];
+        var started = false,
+          opts = { passive: true, capture: true, once: true },
+          evts = ["pointerdown", "touchstart", "mousemove", "keydown", "scroll", "click"];
+        function startGTM() {
+          if (started) return;
+          started = true;
+          for (var i = 0; i < evts.length; i++) {
+            w.removeEventListener(evts[i], startGTM, opts);
+          }
+          w.dataLayer.push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+          var s = d.createElement("script");
+          s.async = true;
+          s.src = "https://www.googletagmanager.com/gtm.js?id=GTM-PLDWFDTZ";
+          d.head.appendChild(s);
+        }
+        for (var i = 0; i < evts.length; i++) {
+          w.addEventListener(evts[i], startGTM, opts);
+        }
+        w.setTimeout(startGTM, 3500);
+      })(window, document);
+    </script>
     <!-- End Google Tag Manager -->
   </head>
 

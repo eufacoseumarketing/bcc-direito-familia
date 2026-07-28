@@ -1,9 +1,9 @@
 import { Scale, Users, BookOpen, Heart, ArrowRight } from "lucide-react";
 
-import divorcioImg from "../assets/divorcio.jpeg";
-import guardaImg from "../assets/guarda.jpeg";
-import inventarioImg from "../assets/inventario.jpeg";
-import filiacaoImg from "../assets/filiacao.jpeg";
+import divorcioImg from "../assets/divorcio.webp";
+import guardaImg from "../assets/guarda.webp";
+import inventarioImg from "../assets/inventario.webp";
+import filiacaoImg from "../assets/filiacao.webp";
 
 const services = [
   {
@@ -91,6 +91,8 @@ const Servicos = () => {
                 <img
                   src={s.image}
                   alt={s.title}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000 ease-out"
                 />
                 

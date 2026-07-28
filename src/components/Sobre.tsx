@@ -1,5 +1,5 @@
-import draMirlla from "@/assets/mirla2.jpg";
-import equipeBcc from "@/assets/equipe-bcc.png";
+import draMirlla from "@/assets/mirla2.webp";
+import equipeBcc from "@/assets/equipe-bcc.webp";
 
 const Sobre = () => {
   return (
@@ -19,6 +19,8 @@ const Sobre = () => {
                 <img
                   src={draMirlla}
                   alt="Dra. Mirlla Reis"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
@@ -62,6 +64,8 @@ const Sobre = () => {
                 <img
                   src={equipeBcc}
                   alt="Equipe BCC Advocacia"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
