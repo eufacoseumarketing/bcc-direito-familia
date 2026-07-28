@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Se o arquivo ou diretório existir, abre ele normalmente (ex: imagens, css, js)
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+
+  # Se não existir, joga tudo para o index.html da mesma pasta
+  RewriteRule ^ index.html [QSA,L]
+</IfModule>

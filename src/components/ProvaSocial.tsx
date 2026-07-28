@@ -1,6 +1,6 @@
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useEffect, useCallback } from "react";
-import clientesBg from "@/assets/clientes-bg.jpeg";
+import clientesBg from "@/assets/clientes-bg.webp";
 
 const testimonials = [
   {
@@ -68,7 +68,7 @@ const ProvaSocial = () => {
     <section className="relative py-20 sm:py-24 overflow-hidden">
       {/* Background image */}
       <div className="absolute inset-0">
-        <img src={clientesBg} alt="" className="w-full h-full object-cover" />
+        <img src={clientesBg} alt="" loading="lazy" decoding="async" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-foreground/85" />
       </div>
 

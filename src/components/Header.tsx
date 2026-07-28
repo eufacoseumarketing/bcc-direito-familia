@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo.webp";
 
 const navItems = [
   { label: "Início", href: "#inicio" },
@@ -28,7 +28,7 @@ const Header = () => {
         }`}
       >
         <a href="#inicio" className="flex items-center gap-2">
-          <img src={logo} alt="BCC Advocacia" className="h-10 w-10 rounded-full" />
+          <img src={logo} alt="BCC Advocacia" width={40} height={40} decoding="async" className="h-10 w-10 rounded-full" />
           <span className="font-serif text-lg font-semibold text-foreground hidden sm:inline">
             
           </span>
